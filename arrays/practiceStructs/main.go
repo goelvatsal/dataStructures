@@ -2,18 +2,19 @@ package main
 
 import "fmt"
 
-type Card struct {
-	face  int
-	shape int
-	color int
+type Rectangle struct {
+	length  int
+	breadth int
 }
 
-func structsPractice() Card {
-	card := Card{1, 0, 0}
+func structsPractice() Rectangle {
+	r1 := Rectangle{10, 5}
 
-	fmt.Println("Face Value: ", card.face)
-	fmt.Println("Shape: ", card.shape)
-	fmt.Println("Color: ", card.color)
+	r1.length = 15
+	r1.breadth = 7
 
-	return card
+	fmt.Println("Length: ", r1.length)
+	fmt.Println("Breadth (Width): ", r1.breadth)
+
+	return r1
 }
