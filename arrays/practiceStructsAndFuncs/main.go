@@ -7,9 +7,7 @@ type Rectangle struct {
 
 func Monolithic(length, width int) (int, int) {
 	var area, peri int
-
-	var r Rectangle
-	initialize(&r, length, width)
+	r := Rectangle{length, width}
 
 	area = findArea(r)
 	peri = findPerimeter(r)
@@ -22,9 +20,4 @@ func findArea(r Rectangle) int {
 
 func findPerimeter(r Rectangle) int {
 	return 2 * (r.length + r.width)
-}
-
-func initialize(r *Rectangle, length, width int) {
-	r.length = length
-	r.width = width
 }
