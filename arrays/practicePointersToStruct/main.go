@@ -7,13 +7,13 @@ type Rectangle struct {
 	breadth int
 }
 
-func pointersPractice() []int {
+func pointersPractice(length, width int) []int {
 	var p *Rectangle
 
 	p = new(Rectangle)
 	p = &Rectangle{
-		length:  15,
-		breadth: 7,
+		length,
+		width,
 	}
 
 	fmt.Println("length =", p.length)

@@ -6,7 +6,7 @@ import (
 )
 
 func TestPointersStruct(t *testing.T) {
-	result := pointersPractice()
+	result := pointersPractice(15, 7)
 	if !reflect.DeepEqual(result, []int{15, 7}) {
 		t.Fatalf("Expected {15,7}, got %v", result)
 	}
