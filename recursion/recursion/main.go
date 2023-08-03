@@ -1,15 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
-func fun1(n int) {
+var out string
+
+func recursion(n int) string {
 	if n > 0 {
-		fmt.Printf("%d ", n)
-		fun1(n - 1)
+		out += strconv.Itoa(n) + " "
+		recursion(n - 1)
 	}
+	return strings.TrimSpace(out)
 }
 
 func main() {
-	fun1(3)
-	fmt.Println()
+	fmt.Println(recursion(3))
 }
