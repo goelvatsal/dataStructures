@@ -41,12 +41,12 @@ func testData() []FibonacciTest {
 }
 
 var (
-	impls []FibonacciPrinter
+	impls []FibonacciComputer
 )
 
 func TestRecursionFibonacci(t *testing.T) {
 	impls = append(impls,
-		&S1R{},
+		&ImplS1R{},
 	)
 
 	tests := testData()
@@ -59,7 +59,7 @@ func TestRecursionFibonacci(t *testing.T) {
 
 		for i, tt := range tests {
 			fibInit()
-			actualOpt := impl.recursionFibonacci(tt.input)
+			actualOpt := impl.computeFibonacci(tt.input)
 			var pOrF string
 			if assert.Equal(t, tt.expectedOpt, actualOpt) {
 				pOrF = dataStructures.Passed

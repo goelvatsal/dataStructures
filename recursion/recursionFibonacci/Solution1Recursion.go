@@ -2,7 +2,7 @@ package FibonacciElements
 
 var slc []int
 
-type S1R struct{}
+type ImplS1R struct{}
 
 func fibInit() {
 	slc = make([]int, 20)
@@ -11,16 +11,16 @@ func fibInit() {
 	}
 }
 
-func (s1 S1R) recursionFibonacci(n int) int {
+func (s1 ImplS1R) computeFibonacci(n int) int {
 	if n <= 1 {
 		slc[n] = n
 		return n
 	} else {
 		if slc[n-2] == -1 {
-			slc[n-2] = s1.recursionFibonacci(n - 2)
+			slc[n-2] = s1.computeFibonacci(n - 2)
 		}
 		if slc[n-1] == -1 {
-			slc[n-1] = s1.recursionFibonacci(n - 1)
+			slc[n-1] = s1.computeFibonacci(n - 1)
 		}
 		slc[n] = slc[n-2] + slc[n-1]
 		return slc[n-2] + slc[n-1]

@@ -1,5 +1,5 @@
 package FibonacciElements
 
-type FibonacciPrinter interface {
-	recursionFibonacci(n int) int
+type FibonacciComputer interface {
+	computeFibonacci(n int) int
 }
