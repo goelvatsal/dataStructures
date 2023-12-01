@@ -2,15 +2,15 @@ package recursionNCR
 
 type ImplS1R struct{}
 
-func fact(n int) int {
+func (s1 ImplS1R) fact(n int) int {
 	if n == 0 {
 		return 1
 	}
-	return fact(n-1) * n
+	return s1.fact(n-1) * n
 }
 
 func (s1 ImplS1R) combinationFormula(n, r int) int {
-	num := fact(n)
-	den := fact(r) * fact(n-r)
+	num := s1.fact(n)
+	den := s1.fact(r) * s1.fact(n-r)
 	return num / den
 }
