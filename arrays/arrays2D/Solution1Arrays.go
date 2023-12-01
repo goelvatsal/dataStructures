@@ -12,9 +12,8 @@ func (s1 ImplS1A) arrays2D() string {
 	}
 
 	var out string
-
-	for i := 0; i < 3; i++ {
-		for j := 0; j < 4; j++ {
+	for i := 0; i < len(arr); i++ {
+		for j := 0; j < len(arr[0]); j++ {
 			out += fmt.Sprintf("%d ", arr[i][j])
 		}
 		out += fmt.Sprintln()
