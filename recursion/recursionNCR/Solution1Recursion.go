@@ -1,4 +1,4 @@
-package CombinationFormula
+package recursionNCR
 
 type ImplS1R struct{}
 

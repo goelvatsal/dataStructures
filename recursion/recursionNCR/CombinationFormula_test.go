@@ -1,4 +1,4 @@
-package CombinationFormula
+package recursionNCR
 
 import (
 	"dataStructures"
