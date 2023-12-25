@@ -6,8 +6,8 @@ import (
 
 type Array struct {
 	A      [20]int
-	size   int
-	length int
+	Size   int
+	Length int
 }
 
 func (arr Array) Display() string {
@@ -15,7 +15,7 @@ func (arr Array) Display() string {
 
 	out += fmt.Sprintf("Elements are: ")
 	fmt.Printf("Elements are: ")
-	for i := 0; i < arr.length; i++ {
+	for i := 0; i < arr.Length; i++ {
 		out += fmt.Sprintf("%d ", arr.A[i])
 		fmt.Printf("%d ", arr.A[i])
 	}
