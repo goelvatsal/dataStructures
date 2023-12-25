@@ -1,6 +1,8 @@
-package arrays
+package display
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type ImplS1A struct{}
 

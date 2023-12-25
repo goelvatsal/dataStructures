@@ -1,4 +1,4 @@
-package arrays
+package display
 
 import (
 	"dataStructures"
