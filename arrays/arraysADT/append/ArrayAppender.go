@@ -1,5 +1,5 @@
 package append
 
-type ArrayAppender interface {
-	arrayAppender(init [20]int, new int) string
+type Appender interface {
+	append(base [20]int, valToAdd int) string
 }

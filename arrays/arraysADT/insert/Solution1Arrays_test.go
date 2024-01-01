@@ -45,7 +45,7 @@ func testData() []ArraysTest {
 }
 
 var (
-	impls []ArrayInserter
+	impls []Inserter
 )
 
 func TestArrayInserter(t *testing.T) {
@@ -62,7 +62,7 @@ func TestArrayInserter(t *testing.T) {
 		t.Logf("Using: %T", impl)
 
 		for i, tt := range tests {
-			actualOpt := impl.arrayInserter(tt.init, tt.index, tt.x)
+			actualOpt := impl.Insert(tt.init, tt.index, tt.x)
 			var pOrF string
 			if assert.Equal(t, tt.expectedOut, actualOpt) {
 				pOrF = dataStructures.Passed

@@ -38,7 +38,7 @@ func testData() []ArraysTest {
 }
 
 var (
-	impls []ArrayAppender
+	impls []Appender
 )
 
 func TestArrayAppender(t *testing.T) {
@@ -55,7 +55,7 @@ func TestArrayAppender(t *testing.T) {
 		t.Logf("Using: %T", impl)
 
 		for i, tt := range tests {
-			actualOpt := impl.arrayAppender(tt.init, tt.new)
+			actualOpt := impl.append(tt.init, tt.new)
 			var pOrF string
 			if assert.Equal(t, tt.expectedOut, actualOpt) {
 				pOrF = dataStructures.Passed

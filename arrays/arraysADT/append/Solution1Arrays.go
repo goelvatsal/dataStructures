@@ -1,7 +1,6 @@
 package append
 
 import (
-	//arrays "dataStructures/arrays/arraysADT/display"
 	"dataStructures/arrays/arraysADT/display"
 )
 
@@ -16,7 +15,7 @@ func (arr *Array) Append(x int) {
 
 type ImplS1A struct{}
 
-func (s1 ImplS1A) arrayAppender(init [20]int, new int) string {
+func (s1 ImplS1A) append(init [20]int, new int) string {
 	var i int
 	for _, v := range init {
 		if v != 0 {

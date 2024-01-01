@@ -25,7 +25,7 @@ func (arr *Array) Insert(index int, x int) {
 	}
 }
 
-func (s1 ImplS1A) arrayInserter(init [20]int, index int, x int) string {
+func (s1 ImplS1A) Insert(init [20]int, index int, x int) string {
 	var i int
 	for _, v := range init {
 		if v != 0 {
