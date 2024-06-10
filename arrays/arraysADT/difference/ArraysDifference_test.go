@@ -47,13 +47,13 @@ var (
 
 func TestArraysDifference(t *testing.T) {
 	impls = append(impls, &ImplS1A{})
-	
+
 	tests := testData()
 	t.Logf("[#tests=%d]", len(tests))
-	
+
 	for _, impl := range impls {
 		t.Logf("Using: %T", impl)
-		
+
 		for i, tt := range tests {
 			actualArr := impl.arraysDifference(tt.arr, tt.arr2)
 			var pOrF string

@@ -3,7 +3,6 @@ package main
 import (
 	"dataStructures/arrays/arraysADT/difference"
 	"fmt"
-	"os"
 	"strconv"
 )
 
@@ -21,34 +20,40 @@ func (arr3 Array) menuProgram() string {
 	fmt.Println("6.  Exit")
 
 	fmt.Printf("Enter choice: ")
-	ch, _ := strconv.Atoi(os.Args[1])
+	var ch int
+	fmt.Scan(&ch)
 
 	if ch > 0 && ch < 7 {
+		var index, val int
 		switch ch {
 		case 1:
-			fmt.Printf("Enter the index and variable value: ")
-			index, _ := strconv.Atoi(os.Args[2])
-			val, _ := strconv.Atoi(os.Args[3])
+			fmt.Printf("Enter the index value: ")
+			fmt.Scan(&index)
+			fmt.Printf("Enter the variable value: ")
+			fmt.Scan(&val)
 			arr3.Array.Array.Array.Array.Array.Insert(index, val)
 			return arr3.Array.Array.Array.Array.Array.Display()
 		case 2:
 			fmt.Printf("Enter the index: ")
-			index, _ := strconv.Atoi(os.Args[2])
+			fmt.Scan(&index)
 			arr3.Array.Array.Array.Array.Array.Delete(index)
 			return arr3.Array.Array.Array.Array.Array.Display()
 		case 3:
-			fmt.Println("What value are you searching for? ")
-			val, _ := strconv.Atoi(os.Args[2])
-			return strconv.Itoa(arr3.Array.Array.Array.Array.Array.BinSearch(val))
+			fmt.Printf("What value are you searching for? ")
+			fmt.Scan(&val)
+			fmt.Println("Value found! Location is:", strconv.Itoa(arr3.Array.Array.Array.Array.Array.BinSearch(val)))
+			return ""
 		case 4:
-			return "Sum: " + strconv.Itoa(arr3.Array.Array.Array.Array.Array.Sum())
+			fmt.Println("Sum: " + strconv.Itoa(arr3.Array.Array.Array.Array.Array.Sum()))
+			return ""
 		case 5:
 			return arr3.Array.Array.Array.Array.Array.Display()
 		case 6:
-			return "Bye!"
+			fmt.Println("Bye!")
 		}
 	} else {
-		return "Incorrect argument passed!"
+		fmt.Println("Incorrect argument passed!")
+		return ""
 	}
 	return ""
 }
@@ -56,5 +61,6 @@ func (arr3 Array) menuProgram() string {
 func main() {
 	var arr3 Array
 	arr3.Array.Array.Array.Array.Array.A = [20]int{1, 2, 3, 4, 5}
+	arr3.Array.Array.Array.Array.Array.Length = 5
 	arr3.menuProgram()
 }
