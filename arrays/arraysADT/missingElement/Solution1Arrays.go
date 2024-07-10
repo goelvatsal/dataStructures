@@ -25,11 +25,10 @@ func (arr2 Array) missingElement(arr [20]int) int {
 
 	low := arr[0]
 	n := arr[(l-1)/2]
-	diff := low - 0
 
 	for i := 0; i < n; i++ {
-		if arr[i]-i != diff {
-			return i + diff
+		if arr[i]-i != low {
+			return i + low
 		}
 	}
 	return -1
