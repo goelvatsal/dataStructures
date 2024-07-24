@@ -19,13 +19,12 @@ func lenCalc(a [20]int) int {
 }
 
 func (arr3 Array) multipleMissingElements(arr [20]int) []int {
-	l := lenCalc(arr)
-
-	low := arr[0]
-	n := arr[(l-1)/2]
+	//l := lenCalc(arr)
+	low := lowestNum(arr)
+	n := highestNum(arr)
 	diff := low
-	var opt []int
 
+	var opt []int
 	for i := 0; i < n; i++ {
 		if !(i >= 20) {
 			if arr[i]-i != diff {

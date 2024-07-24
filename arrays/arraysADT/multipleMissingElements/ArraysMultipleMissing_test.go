@@ -14,24 +14,24 @@ type ArraysTest struct {
 func testData() []ArraysTest {
 	return []ArraysTest{
 		{
-			[20]int{6, 7, 8, 9, 11, 12, 15, 16, 17, 18, 19},
+			[20]int{6, 7, 8, 9, 11, 12, 15, 16},
 			[]int{10, 13, 14},
 		},
 		{
-			[20]int{100, 105, 110},
-			[]int{101, 102, 103, 104, 106, 107, 108, 109},
+			[20]int{3, 4, 6, 7, 9, 10, 11, 12},
+			[]int{5, 8},
 		},
 		{
 			[20]int{1, 2, 3, 4, 5},
 			[]int(nil),
 		},
 		{
-			[20]int{20, 21, 22, 23, 25},
-			[]int{24},
+			[20]int{7, 9, 10},
+			[]int{8},
 		},
 		{
-			[20]int{50, 59},
-			[]int{51, 52, 53, 54, 55, 56, 57, 58},
+			[20]int{1, 2, 3, 4, 5, 6, 7, 8, 10},
+			[]int{9},
 		},
 	}
 }
@@ -41,7 +41,10 @@ var (
 )
 
 func TestMultipleMissingElements(t *testing.T) {
-	impls = append(impls, &ImplS1A{})
+	impls = append(impls,
+		&ImplS1A{},
+		&ImplS2H{},
+	)
 
 	tests := testData()
 	t.Logf("[#tests=%d]", len(tests))
