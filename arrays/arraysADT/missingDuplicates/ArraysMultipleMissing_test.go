@@ -42,7 +42,8 @@ var (
 
 func TestMissingDuplicates(t *testing.T) {
 	impls = append(impls,
-		&ImplS1A{})
+		&ImplS1A{},
+		&ImplS2H{})
 
 	tests := testData()
 	t.Logf("[#tests=%d]", len(tests))
